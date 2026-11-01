@@ -1,0 +1,13 @@
+{
+  "name": "suivi-soutiens-2027",
+  "private": true,
+  "type": "module",
+  "description": "Suivi du nombre de soutiens de melenchon2027.fr et des dates clefs de la campagne",
+  "scripts": {
+    "start": "node serveur.js",
+    "releve": "node suivi_soutiens.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

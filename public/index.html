@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suivi des soutiens 2027</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234c0297'/%3E%3Cpath d='M6 24 13 15l6 3 7-10' fill='none' stroke='%23fffcf4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Stack+Sans+Text:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="bandeau">
+    <div class="conteneur">
+      <span class="bandeau-titre">Suivi des soutiens</span>
+      <span class="bandeau-source">Source : melenchon2027.fr</span>
+    </div>
+  </header>
+
+  <main class="conteneur">
+    <section class="hero" aria-live="polite">
+      <p class="surtitre">Soutiens à l'éléction de La France Insoumise et son candidat Jean-Luc Mélenchon</p>
+      <h1 class="compteur"><span>Nous sommes</span> <strong id="total">…</strong></h1>
+      <p class="hero-delta" id="delta"></p>
+      <div class="hero-actions">
+        <button type="button" class="bouton" id="actualiser">Actualiser</button>
+        <p class="statut" id="statut">Relevé en cours…</p>
+      </div>
+    </section>
+
+    <section class="carte" aria-labelledby="titre-graphique">
+      <div class="carte-entete">
+        <h2 id="titre-graphique">Évolution du nombre de soutiens</h2>
+        <ul class="cles" aria-hidden="true">
+          <li><span class="cle-ligne"></span>Soutiens cumulés</li>
+          <li><span class="cle-evt"></span>Date clef</li>
+        </ul>
+      </div>
+      <div class="graphique" id="graphique" tabindex="0" role="group" aria-describedby="aide-graphique"></div>
+      <p class="aide" id="aide-graphique">Survolez la courbe pour lire chaque relevé, ou les pastilles pour les dates clefs. Au clavier : flèches ← →.</p>
+    </section>
+
+    <section aria-labelledby="titre-evenements">
+      <h2 class="section-titre" id="titre-evenements">Dates clefs de la campagne</h2>
+      <ol class="evenements" id="evenements"></ol>
+    </section>
+
+    <details class="carte releves">
+      <summary>Voir tous les relevés</summary>
+      <div class="table-defilement">
+        <table>
+          <thead><tr><th scope="col">Date</th><th scope="col">Soutiens</th><th scope="col">Évolution</th></tr></thead>
+          <tbody id="releves"></tbody>
+        </table>
+      </div>
+    </details>
+  </main>
+
+  <footer class="conteneur pied">
+    Données : <code>soutiens.csv</code> (relevés) · <code>evenements.csv</code> (dates clefs : date_debut, date_fin, titre, lien, illustration)
+  </footer>
+</body>
+</html>
