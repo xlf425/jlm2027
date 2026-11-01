@@ -1,0 +1,11 @@
+# Blueprint Render (Render ignore le Procfile : c'est ce fichier qui fait foi).
+services:
+  - type: web
+    name: suivi-soutiens-2027
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node serveur.js
+    envVars:
+      - key: TZ # les relevés sont horodatés à l'heure locale du serveur (UTC par défaut sur Render)
+        value: Europe/Paris
